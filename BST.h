@@ -11,7 +11,7 @@ class BST{
     void copyBST(Node* &this_tree, Node* copying_tree); //helper function for copy constructor and overloaded assignment operator
     void deleteBST(Node* ptr); //helper function for destructor and overloaded assignment operator
     Node* find(int account_num); //helper function to find account
-    Node* BST::find(int account_num, Node* parent); //helper function to find account and parent of account
+    Node* find(int account_num, Node* parent); //helper function to find account and parent of account
     Node* getSuccesor(int account_num); //helper function for obtaining successor of a node
   public:
     Node* root;

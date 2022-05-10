@@ -112,14 +112,18 @@ Node* BST::find(int account_num, Node* parent){
     return nullptr;
   }
   else{
-    while(ptr -> account_num != account_num){
-      if(ptr -> account_num > account_num){
+    if(ptr -> account_num == account_num){
+      parent = ptr;
+    }
+    else{
+      while(ptr -> account_num != account_num){
         parent = ptr;
-        ptr = ptr -> left;
-      }
-      else{
-        parent = ptr;
-        ptr = ptr -> right;
+        if(ptr -> account_num > account_num){
+          ptr = ptr -> left;
+        }
+        else{
+          ptr = ptr -> right;
+        }
       }
     }
   }
@@ -134,12 +138,24 @@ Node* BST::getSuccesor(int account_num){ //check to see if search can be used he
       ptr = ptr -> left;
     }
   }
+  return ptr;
 }
 
 int BST::remove(int account_num){
   Node* parent_ptr = root;
   Node* remove_node = find(account_num, parent_ptr);
-
+  Node* successor = getSuccesor(account_num);
+  int value = remove_node -> account_num;
+  if((remove_node -> left == nullptr) && (remove_node -> right == nullptr)){
+    if(remove_node == parent_ptr -> left){
+      parent_ptr -> left == nullptr;
+    }
+    else{
+      parent_ptr -> right == nullptr;
+    }
+    delete remove_node;
+  }
+  return value;
 }
 
 int BST::size() const{
