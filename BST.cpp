@@ -76,11 +76,11 @@ void BST::insert(int account_num, string name, int balance, string account_type)
       }
     }
     if(account_num > prev -> account_num){
-      prev -> left = newNode;
+      prev -> right = newNode;
       tree_size++;
     }
     else{
-      prev -> right = newNode;
+      prev -> left = newNode;
       tree_size++;
     }
   }
@@ -144,9 +144,9 @@ Node* BST::getSuccesor(int account_num){ //check to see if search can be used he
 int BST::remove(int account_num){
   Node* parent_ptr = root;
   Node* remove_node = find(account_num, parent_ptr);
-  // cout << "The remove node is " << remove_node << " and the parent is " << parent_ptr << endl;
+  cout << "The remove node is " << remove_node -> account_num << " and the parent is " << parent_ptr -> account_num << endl;
   Node* successor = getSuccesor(account_num);
-  // cout << "Successor node is " << successor << endl;
+  cout << "Successor node is " << successor -> account_num << endl;
   int value = remove_node -> account_num;
   if(remove_node == root){
     delete remove_node;
@@ -162,7 +162,7 @@ int BST::remove(int account_num){
       parent_ptr -> left == nullptr;
     }
     delete remove_node;
-    // cout << "root is " << root << endl;
+    cout << "root is " << root->account_num << endl;
     tree_size--;
   }
 
