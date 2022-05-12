@@ -2,5 +2,6 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/shad/Desktop/Personal Projects/Bank Management System'
  
 g++ -Wall -std=c++11 -o test main.cpp
+ 
 make: Leaving directory '/home/shad/Desktop/Personal Projects/Bank Management System'
  

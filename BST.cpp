@@ -144,17 +144,28 @@ Node* BST::getSuccesor(int account_num){ //check to see if search can be used he
 int BST::remove(int account_num){
   Node* parent_ptr = root;
   Node* remove_node = find(account_num, parent_ptr);
+  // cout << "The remove node is " << remove_node << " and the parent is " << parent_ptr << endl;
   Node* successor = getSuccesor(account_num);
+  // cout << "Successor node is " << successor << endl;
   int value = remove_node -> account_num;
-  if((remove_node -> left == nullptr) && (remove_node -> right == nullptr)){
+  if(remove_node == root){
+    delete remove_node;
+    tree_size--;
+    root = nullptr;
+  }
+  
+  else if((remove_node -> left == nullptr) && (remove_node -> right == nullptr)){
     if(remove_node == parent_ptr -> left){
       parent_ptr -> left == nullptr;
     }
     else{
-      parent_ptr -> right == nullptr;
+      parent_ptr -> left == nullptr;
     }
     delete remove_node;
+    // cout << "root is " << root << endl;
+    tree_size--;
   }
+
   return value;
 }
 

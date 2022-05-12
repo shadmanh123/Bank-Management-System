@@ -16,9 +16,11 @@ void insertion_test(){
 void remove_test(){
   BST bank;
   bank.insert(12345, "John Doe", 2000, "Chequings");
+  bank.insert(23456, "Jane Doe", 10000, "Savings");
   //bank.print(bank.root);
   cout << "The Bank has # " << bank.size() << " accounts" <<endl;
-  bank.remove(12345);
+  // bank.remove(12345);
+  bank.remove(23456);
   cout << "The Bank has # " << bank.size() << " accounts" <<endl;
 
 }
@@ -26,5 +28,6 @@ void remove_test(){
 int main() {
   //insertion_test();
   remove_test();
+  
   return 0;
 }
