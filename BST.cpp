@@ -1,6 +1,7 @@
 //Implementation of Binary Search Tree
 #include "Node.h"
 #include "BST.h"
+#include <iostream>
 using std::string;
 using std::cout;
 using std::endl;
