@@ -1,22 +1,22 @@
 #include <iostream>
 #include <iostream>
-#include "Node.h"
-#include "BST.h"
-#include "BST.cpp"
+#include "Account.h"
+#include "Bank.h"
+#include "Bank.cpp"
 
 //std::cout;
 //std::endl;
 void insertion_test(){
-  BST bank;
+  Bank bank;
   bank.insert(12345, "John Doe", 2000, "Chequings");
   cout << "The Bank has # " << bank.size() << " accounts" <<endl;
   bank.insert(23456, "Jane Doe", 10000, "Savings");
   cout << "The Bank has # " << bank.size() << " accounts" <<endl;
-  bank.print(bank.root);
+  // bank.print(bank.root);
 }
 
 void remove_test(){
-  BST bank;
+  Bank bank;
   bank.insert(12345, "John Doe", 2000, "Chequings");
   bank.insert(23456, "Jane Doe", 10000, "Savings");
   //bank.print(bank.root);
@@ -27,7 +27,7 @@ void remove_test(){
 }
 
 int main() {
-  //insertion_test();
-  remove_test();
+  insertion_test();
+  // remove_test();
   return 0;
 }
